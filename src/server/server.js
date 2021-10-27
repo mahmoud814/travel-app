@@ -18,7 +18,10 @@ app.listen( port , ()=>{
     console.log(`server running on localhost port: ${port}`)
 });
 // intialize the main project folder
-app.use(express.static('weather-site'));
+app.use(express.static('dist'));
+app.get('/', function (req, res) {
+    res.sendFile('dist/index.html');
+});
 
 // create empty array act as endpoint for routes
 projectData = {};

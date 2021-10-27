@@ -1,3 +1,5 @@
+import './styles/main.scss';
+
 // global variables 
 const baseURL = "http://api.openweathermap.org/data/2.5/weather?zip=";
 const apiKey ="&appid=fd16d6d32ab7a7814aed0df675cac427&units=imperial";
