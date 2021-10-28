@@ -21,17 +21,22 @@ document.getElementById('feel').innerHTML = "I feel : NO DATA YET";
 document.getElementById('generate').addEventListener('click' , makeRequests);
 function makeRequests (e){
     e.preventDefault();
-    const zipCode = document.getElementById('zip').value;
-    const feel = document.getElementById('feelings').value;
-    getWeaterData( baseURL , zipCode , apiKey )
-    .then(function(data){
-        postWeatherData('/add', { date: newDate, temp: data.main.temp, feel })
+    const destinationInput = document.getElementById('zip').value;
+    const remarksInput = document.getElementById('feelings').value;
+    console.log(destinationInput);
+    fetch ('http://localhost:8007/all-apis', {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({destinationInput, remarksInput}) // Convert the input data of destination and remarks into a string for server
     })
-    .then(()=>{
-       getServerData();
-    });
-    // form clear
-    document.querySelector('.app-form').reset();
+
+    .then (res => {
+        return res.json()
+        console.log(res);
+    })
 
 }
 //  Function to get server data
