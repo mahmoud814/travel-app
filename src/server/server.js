@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 // Cors for cross origin allowance
 app.use(cors());
 // spin up the server
-const port = 8012;
+const port = 8000;
 app.listen( port , ()=>{
     console.log(`server running on localhost port: ${port} ${process.env.geonamesUserName}`)
 });
@@ -88,7 +88,7 @@ app.post('/all-apis', (req, res) => {
                     fetch (pixabayDefaultAPI)
                     .then (res => res.json())
                     .then (pixabayDefaultData => {
-                        console.log(pixabayDefaultData);
+                        // console.log(pixabayDefaultData);
     
                         // Sent All Data
                         res.send({appInputData, geonamesData, weatherbitData, pixabayData, pixabayDefaultData});

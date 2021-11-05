@@ -1,27 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
 
-body {
-    background-image: url('http://localhost:8000/media/snow.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.container{
-    margin-top: 5%;
-}
-.app-form{
-    width: 80%;
-    margin: 0 auto;
-}
-.app-form h1 {
-    text-align: center;
-    color: #0d6efd;
+// Styling Variables
+
+$defaultFont: 'Roboto Condensed', sans-serif;
+$lightBlue: #03A9F4;
+$midGrey: #aaa;
+$lightGrey: #F9F9F9;
+$white: #fff;
+$mentGreen : #00abad;
+
+
+// Main Structure
+
+html {
+    scroll-behavior: smooth;
+
+    body {
+        font-family: $defaultFont;
+        background-color: $lightGrey;
+        padding: 0;
+        margin: 0;
+        max-width: 100%;
+        overflow-x: hidden;
+
+        a {
+            color: $lightBlue;
+            transition: 0.3;
+        
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
 }
 
-.entryHolder {
+//  header section
+
+header {
     text-align: center;
-    margin: 20px;
+    padding-top: 20px;
+       .header-line {
+        font-family: 'Architects Daughter', cursive;
+        display: block;
+        color: $lightBlue;
+        font-size: 30px;
+        letter-spacing: 35px;
+        margin-bottom: 2%;
+        animation: moveInLeft 2s ease-out;
+      }
+      .header-line2 {
+        font-family: 'Architects Daughter', cursive;
+        font-size: 20px;
+        display: block;
+        color: $lightBlue;
+        animation: moveInRight 2s ease-out;
+      }
+      img {
+          width: 300px;
+          height: 300px;
+      }
 }
-.data_content{
+
+  @keyframes moveInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-150px);
+    }
+    
+    80% {
+      transform: translateX(10px);
+    }
+    
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+  @keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(150px);
+    }
+
+    80% {
+        transform: translateX(-10px);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+
+}
+
+// form section
+
+.wrapper {
+    max-width: 800px;
+    margin: 10px auto ;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.wrapper form {
+    padding: 30px 50px
+}
+
+.wrapper form .form-group {
+    padding-bottom: .5rem
+}
+
+.wrapper form .form-control {
+    outline: none;
+    border: none
+}
+
+.wrapper form .form-control:focus {
+    box-shadow: none
+}
+
+.wrapper form input[type="text"]:focus::placeholder {
+    color: transparent
+}
+.wrapper form input[type="number"]:focus::placeholder {
+    color: transparent
+}
+.wrapper form textarea[type="text"]:focus::placeholder {
+    color: transparent
+}
+
+input[type="date"] {
+    cursor: pointer
+}
+
+.wrapper form .label::after {
+    position: absolute;
+    top: 5px;
+    left: 0px;
+    font-size: 0.9rem;
+    margin: 0rem 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+    font-weight: 600;
+    color: #999;
+    transition: all .2s ease-in-out;
+    transform: scale(0)
+}
+
+
+.wrapper form .label#Destination::after {
+    content: 'Destination'
+}
+
+.wrapper form .label#depart::after {
+    content: 'Depart Date'
+}
+
+.wrapper form .label#return::after {
+    content: 'Return Date'
+}
+
+.wrapper form .label#psngr::after {
+    content: 'Traveller(s)'
+}
+.wrapper form .label#notes::after {
+    content: 'Notes'
+}
+
+.wrapper form input[type="text"]:focus~.label::after {
+    top: -15px;
+    left: 0px;
+    transform: scale(1)
+}
+
+.wrapper form input[type="date"]:focus~.label::after {
+    top: -15px;
+    left: 0px;
+    transform: scale(1)
+}
+.wrapper form input[type="number"]:focus~.label::after {
+    top: -15px;
+    left: 0px;
+    transform: scale(1)
+}
+.wrapper form textarea[type="text"]:focus~.label::after {
+    top: -15px;
+    left: 0px;
+    transform: scale(1)
+}
+
+.margin {
+    margin: 2rem 0rem
+}
+.btn-div {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+}
+.loading {
+    display: none;
+    align-items: center;
+    color: $lightBlue;
+    span {
+        margin: 0 20px;
+    }
+}
+.btn-outline-primary {
+    color: $lightBlue;
+    border-color: $lightBlue;
+}
+.active {
+    display: flex;
 }
 
+@media(max-width: 575.5px) {
+    .wrapper {
+        margin: 10px
+    }
+
+    .wrapper form {
+        padding: 20px
+    }
+
+    .margin {
+        margin: .2rem 0rem
+    }
+}

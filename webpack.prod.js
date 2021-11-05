@@ -42,7 +42,7 @@ module.exports = {
         }),
         new WorkboxPlugin.GenerateSW(),
         new CopyPlugin([
-            { from: './src/client/img', to: './img' },
+            { from: './src/client/media', to: './media' },
         ])
     ]
 }
