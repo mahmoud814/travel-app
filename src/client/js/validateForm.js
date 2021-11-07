@@ -1,6 +1,3 @@
-import { FALSE } from "node-sass";
-
-const { dayDiffrence } = require("./dayDiff.js");
 
 export function validate(departInput , returnInput , destinationInput) {
     let todayDefault = new Date();
@@ -24,7 +21,7 @@ export function validate(departInput , returnInput , destinationInput) {
         distSpan.classList.add("inValid");
     }
 
-    let tripDay = dayDiffrence(todayCustom , departInput); 
+    let tripDay = Client.dayDiffrence(todayCustom , departInput); 
     if(tripDay  <  0 ){
         var warrndiv = document.getElementById("warrn");
         warrndiv.classList.add("inValid");
@@ -32,7 +29,7 @@ export function validate(departInput , returnInput , destinationInput) {
    
 
     if(departInput.length === 0 || returnInput.length === 0 || destinationInput.length === 0 || tripDay  <  0){
-        return FALSE
+        return false
     } else {
         return true;
     }
