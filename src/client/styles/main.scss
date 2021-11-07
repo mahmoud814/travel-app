@@ -9,6 +9,7 @@ $midGrey: #aaa;
 $lightGrey: #F9F9F9;
 $white: #fff;
 $mentGreen : #00abad;
+$warning : #D8000C;
 
 
 // Main Structure
@@ -119,7 +120,7 @@ header {
     box-shadow: none
 }
 
-.wrapper form input[type="text"]:focus::placeholder {
+.wrapper form input[type="date"]:focus::placeholder {
     color: transparent
 }
 .wrapper form input[type="number"]:focus::placeholder {
@@ -161,10 +162,10 @@ input[type="date"] {
 }
 
 .wrapper form .label#psngr::after {
-    content: 'Traveller(s)'
+    content: 'Travellers (Optional)'
 }
 .wrapper form .label#notes::after {
-    content: 'Notes'
+    content: 'Notes (Optional)'
 }
 
 .wrapper form input[type="text"]:focus~.label::after {
@@ -189,6 +190,17 @@ input[type="date"] {
     transform: scale(1)
 }
 
+.feedback {
+  position:absolute ;
+  top: 40px;
+  left: 10px;
+  color: $warning;
+  display: none;
+}
+.dist{
+  top:45px;
+}
+
 .margin {
     margin: 2rem 0rem
 }
@@ -208,9 +220,20 @@ input[type="date"] {
     color: $lightBlue;
     border-color: $lightBlue;
 }
+.warrning-mesg {
+    display: none;
+    text-align: center;
+    background: $warning;
+    color: #fff;
+    padding: 10px;
+}
 .active {
     display: flex;
 }
+.inValid{
+  display: block;
+}
+
 
 
 // footer section
