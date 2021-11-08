@@ -33,13 +33,13 @@ handleSubmit.addEventListener('click' , (e)=>{
 
   // fetching data from api
     if (validation) {
-      fetch ('http://localhost:8000/all-apis', {
+      fetch ('http://localhost:9000/all-apis', {
         method: 'POST',
         credentials: 'same-origin',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({destinationInput, psngrInput , notesInput , tripDay}) // Convert the input data of destination and remarks into a string for server
+        body: JSON.stringify({destinationInput, psngrInput , notesInput , tripDay , departInput , returnInput}) // Convert the input data of destination and remarks into a string for server
     })
       .then (res => {
         return res.json()

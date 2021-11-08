@@ -14,12 +14,12 @@
         <div class="logo">
             <h1 class="header-line">Travel App</h1>
             <h4 class="header-line2">Not all those who wander are lost</h4>
-            <img src="./src/client/media/logo.png" alt="logo">
+            <img src="media/logo.png" alt="logo">
         </div>
     </header>
     <section>
         <div class="wrapper bg-white">
-            <form action="#" class="needs-validation">
+            <form action="#">
                 <div class="warrning-mesg" id="warrn">depart day can't be less than today</div>
                 <div class="form-group d-sm-flex margin">
                     <div class="d-flex align-items-center flex-fill me-sm1 my-sm-0 border-bottom position-relative">
@@ -83,7 +83,59 @@
     
     <div id="myModal" class="modal">
         <div class="modal-content">
-          <p>Some text in the Modal..</p>
+            <span class="close">&times;</span>
+            <div id="destination-name" class="dest-name"></div>
+            <div class="row ms-0 me-0">
+                <div class="country-wrapper col-md-8 col-sm-12">
+                    <img src="" id="country-img">                    
+                    <div  class="country-info">
+                        <div>
+                            <h1 class="heading"> Country Name</h1>
+                            <div id="country-name" class="info"></div>
+                        </div>
+                        <div>
+                            <h1 class="heading">Country Code</h1>
+                            <div id="country-code" class="info"></div>
+                        </div>
+                        <div>
+                            <h1 class="heading">Time Zone</h1>
+                            <div id="time-zone" class="info"></div>
+                        </div>
+                        <div>
+                            <h1 class="heading">Population</h1>
+                            <div id="population" class="info"></div>
+                        </div>
+                        <div>
+                            <h1 class="heading">Description</h1>
+                            <div id="destination-description" class="info"></div>
+                        </div>
+                    </div>
+                </div>          
+                <div class="dates-wrapper col-md-4 col-sm-12">
+                   <div class="card-info">
+                    <h1 class="heading">Number Of Trip Days</h1>
+                    <div id="trip-day" class="info"></div>
+                   </div>
+                   <div class="card-info">
+                    <h1 class="heading">Departure Date</h1>
+                    <div id="depart-date" class="info"></div>
+                   </div>
+                   <div class="card-info"> 
+                    <h1 class="heading">Return Date</h1>
+                    <div id="return-date" class="info"></div>
+                   </div>
+                   <div class="card-info">
+                    <h1 class="heading">Number Of Travellers</h1>
+                    <div id="trip-pasgr" class="info"></div>
+                   </div>
+                   <div class="card-info">
+                    <h1 class="heading"> Notes</h1>
+                    <div id="trip-notes" class="info"></div>
+                   </div>
+                </div>
+            </div>
+            <div class="head-line"> Weather Condition</div>
+            <div class="weather-wrapper"></div>
         </div>   
     </div>
 </body>

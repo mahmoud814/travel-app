@@ -320,17 +320,17 @@ input[type="date"] {
   
   /* Modal Content */
   .modal-content {
-    background-color: #fefefe;
+    background-color: $lightGrey;
     margin: auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid $midGrey;
     width: 80%;
   }
-  
-  /* The Close Button */
   .close {
-    color: #aaaaaa;
-    float: right;
+    color: $midGrey;
+    position: absolute;
+    top: 0;
+    right: 20px;
     font-size: 28px;
     font-weight: bold;
   }
@@ -341,13 +341,124 @@ input[type="date"] {
     text-decoration: none;
     cursor: pointer;
   }
+ 
+  .dest-name {
+    text-align: center;
+    margin: 10px;
+    font-size: 36px;
+    color: $mentGreen;
+    font-weight: 400;
+    font-family: 'Architects Daughter', cursive;
+  }
+ .country-wrapper {
+  box-shadow: 0 4px 8px 0 $midGrey;
+  transition: 0.3s;
+  padding: 0;
+   img {
+     width: 100%;
+   }
+  }
+ .country-wrapper:hover {
+  box-shadow: 0 8px 16px 0 $midGrey;
+ }
+ .country-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+ }
+ .heading {
+  margin: 10px;
+  font-size: 24px;
+  color: $mentGreen;
+  font-weight: 400;
+  font-family: 'Architects Daughter', cursive;
+ }
+
+ .info {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: $lightBlue;
+ }
+
+.dates-wrapper {
+  padding-right: 0;
+}
+
+.card-info {
+  box-shadow: 0 4px 8px 0 $midGrey;
+  transition: 0.3s;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+}
+.card-info:hover {
+  box-shadow: 0 8px 16px 0 $midGrey;
+}
+
+
+//  weathe info
+.head-line{
+  text-align: center;
+  margin-top: 20px;
+  font-size: 36px;
+  color: $mentGreen;
+  font-weight: 400;
+  font-family: 'Architects Daughter', cursive;
+}
+.weather-wrapper {
+  padding: 50px 50px 0;
+  overflow: auto;
+
+  .weather-message{
+    text-align: center;
+    background: #D8000C;
+    color: #fff;
+    padding: 10px;
+    margin: 30px;
+  }
+
+  .weather-card {
+      width: 20%;
+      float: left;
+      text-align: center;
+
+      img {
+          width: 80px;
+      }
+
+      .temp {
+          color: $lightBlue;
+          font-size: 0.8em;
+      }
+      .temp-date {
+          font-weight: bold;
+          color: $mentGreen;
+          padding: 15px 0;
+      }
+  }
+}
+
+
+
+
+
   
       
   /* Media Queries */
 
+  @media(max-width: 380px) {
+    .weather-card {
+      width: 50% !important;
+    }
+}
+
   @media(max-width: 575.5px) {
     .wrapper {
         margin: 10px
+    }
+    .modal-content {
+      width: 100% !important;
     }
 
     .wrapper form {
@@ -358,16 +469,33 @@ input[type="date"] {
         margin: .2rem 0rem
     }
 }
-  
-  @media (max-width: 600px) {
-    .footer-distributed .footer-left, .footer-distributed .footer-right {
+
+@media (max-width: 600px) {
+  .weather-card {
+    width: 33% !important;
+  }
+  .footer-distributed .footer-left, .footer-distributed .footer-right {
+    text-align: center;
+  }
+  .footer-distributed .footer-right {
+    float: none;
+    margin: 0 auto 20px;
+  }
+  .footer-distributed .footer-left p.footer-links {
+    line-height: 1.8;
+  }
+}
+
+  @media (max-width : 1100px) {
+    .modal-content {
+      width: 90%;
+    }
+    .country-info{
+      flex-direction: column;
       text-align: center;
     }
-    .footer-distributed .footer-right {
-      float: none;
-      margin: 0 auto 20px;
-    }
-    .footer-distributed .footer-left p.footer-links {
-      line-height: 1.8;
-    }
   }
+
+  
+  
+ 

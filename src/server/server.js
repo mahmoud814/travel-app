@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 // Cors for cross origin allowance
 app.use(cors());
 // spin up the server
-const port = 8000;
+const port = 9000;
 app.listen( port , ()=>{
     console.log(`server running on localhost port: ${port} ${process.env.geonamesUserName}`)
 });
